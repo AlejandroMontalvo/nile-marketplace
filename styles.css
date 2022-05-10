@@ -1,0 +1,249 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.accountFormContainer {
+  width: 20%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1%;
+  border: 1px solid black;
+  min-width: 15rem;
+}
+
+.accountFormContainer h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.accountFormContainer img {
+  margin: 0 auto;
+  display: block;
+  width: 5rem;
+  height: 5rem;
+}
+
+.accountFormContainer label {
+  font-size: 1.2rem;
+}
+
+.accountFormContainer input {
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 0px;
+  border-width: 1px;
+  border-color: #e6e6e6;
+}
+
+#topNav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 6.5rem;
+  padding: 1.2rem 3rem;
+  z-index: 1;
+  background: #1f1f1f;
+  color: #e6e6e6;
+}
+
+#navLogo {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+#navCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+#navSearch {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background: #121212;
+  border-radius: 1.5rem;
+  padding: 0.4rem 0.5rem 0.4rem 0.5rem;
+  width: 30rem;
+}
+
+#searchInput {
+  font-size: 1.5rem;
+  width: 26rem;
+  border-radius: 0px;
+  border-width: 0px;
+  background: #121212;
+  color: #e6e6e6;
+  border-radius: 1.5rem;
+  outline: none;
+}
+
+#searchIcon {
+  width: 2rem;
+}
+
+#searchIcon:hover {
+  filter: invert(50%) sepia(90%) saturate(2855%) hue-rotate(173deg)
+    brightness(103%) contrast(107%);
+}
+
+#navTools {
+  margin-left: auto;
+}
+
+#navProfile {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#navProfile:hover {
+  filter: invert(50%) sepia(90%) saturate(2855%) hue-rotate(173deg)
+    brightness(103%) contrast(107%);
+}
+
+#navProfile img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.dropdownIcon {
+  width: 1.5rem;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+#profileDropdown a:hover > .dropdownIcon {
+  filter: invert(50%) sepia(90%) saturate(2855%) hue-rotate(173deg)
+    brightness(103%) contrast(107%);
+}
+
+#profileDropdown {
+  display: none;
+  background: #1d1d1d;
+  position: fixed;
+  right: 3.4rem;
+}
+
+#profileDropdown a {
+  display: block;
+  text-decoration: none;
+  color: #e6e6e6;
+  padding: 1rem;
+}
+
+#profileDropdown a:hover {
+  color: #00aaff;
+  background: #303030;
+}
+
+#navCart {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#navCart img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#navCart img:hover {
+  filter: invert(50%) sepia(90%) saturate(2855%) hue-rotate(173deg)
+    brightness(103%) contrast(107%);
+}
+
+#sideNav {
+  position: fixed;
+  margin-top: 6.5rem;
+  width: 13rem;
+  height: 100%;
+  background: #1f1f1f;
+  color: #e6e6e6;
+  z-index: 2;
+}
+
+.sideNavTitle {
+  text-align: center;
+  color: #e6e6e6;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+#sideNav a {
+  display: block;
+  text-decoration: none;
+  color: #e6e6e6;
+}
+
+#sideNav a:hover {
+  display: block;
+  text-decoration: none;
+  color: #00aaff;
+}
+
+.sideNavCategory {
+  margin: 0.3rem 1rem;
+}
+
+.sideNavSubCategory {
+  margin: 0.3rem 2rem;
+}
+
+#storeFront {
+  background: #121212;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding-left: 15rem;
+  padding-top: 8.5rem;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.listing {
+  width: 16rem;
+  height: 15rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: #e6e6e6;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  background: #1d1d1d;
+}
+
+.listing img {
+  width: 100%;
+  height: 70%;
+}
+
+.listingTitle {
+  margin-top: 0rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+.listingPrice {
+  display: inline-block;
+  color: #00aaff;
+  margin-top: 0.3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
