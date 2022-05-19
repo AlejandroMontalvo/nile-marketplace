@@ -8,4 +8,13 @@ window.onload = function () {
       profileDropdown.style.display = "block";
     }
   });
+
+  window.addEventListener("click", function (event) {
+    if (
+      !profileButton.contains(event.target) &&
+      !profileDropdown.contains(event.target)
+    ) {
+      profileDropdown.style.display = "none";
+    }
+  });
 };

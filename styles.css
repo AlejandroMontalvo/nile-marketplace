@@ -8,6 +8,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  background: #121212;
 }
 
 .accountFormContainer {
@@ -52,10 +53,11 @@ body {
   top: 0;
   width: 100%;
   height: 6.5rem;
-  padding: 1.2rem 3rem;
+  padding: 1.2rem 4rem;
   z-index: 1;
   background: #1f1f1f;
   color: #e6e6e6;
+  border-bottom: 1px solid #121212;
 }
 
 #navLogo {
@@ -76,14 +78,14 @@ body {
   justify-content: center;
   margin: 0 auto;
   background: #121212;
-  border-radius: 1.5rem;
-  padding: 0.4rem 0.5rem 0.4rem 0.5rem;
-  width: 30rem;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  width: 28rem;
 }
 
 #searchInput {
   font-size: 1.5rem;
-  width: 26rem;
+  width: 25rem;
   border-radius: 0px;
   border-width: 0px;
   background: #121212;
@@ -134,9 +136,11 @@ body {
 
 #profileDropdown {
   display: none;
-  background: #1d1d1d;
+  background: #2e2e2e;
   position: fixed;
-  right: 3.4rem;
+  right: 3.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 #profileDropdown a {
@@ -148,7 +152,7 @@ body {
 
 #profileDropdown a:hover {
   color: #00aaff;
-  background: #303030;
+  background: #444444;
 }
 
 #navCart {
@@ -170,7 +174,7 @@ body {
 #sideNav {
   position: fixed;
   margin-top: 6.5rem;
-  width: 13rem;
+  width: 12rem;
   height: 100%;
   background: #1f1f1f;
   color: #e6e6e6;
@@ -211,10 +215,10 @@ body {
   height: 100%;
   display: inline-flex;
   flex-wrap: wrap;
-  padding-left: 15rem;
-  padding-top: 8.5rem;
   justify-content: flex-start;
   align-content: flex-start;
+  margin-left: 12rem;
+  margin-top: 8.5rem;
 }
 
 .listing {
@@ -224,13 +228,20 @@ body {
   text-decoration: none;
   color: #e6e6e6;
   margin-bottom: 2rem;
-  margin-right: 2rem;
+  margin-left: 2rem;
   background: #1d1d1d;
+  border-radius: 0.5rem;
 }
 
 .listing img {
   width: 100%;
   height: 70%;
+}
+
+.listingTitleSpace {
+  height: 15%;
+  overflow: hidden;
+  margin-top: 0.5rem;
 }
 
 .listingTitle {
