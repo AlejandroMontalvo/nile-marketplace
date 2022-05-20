@@ -12,16 +12,15 @@
 </head>
     <body>
         <div class='accountFormContainer'>
-            <h3>Login to Marketplace</h3>
-            <img id="navLogo" src="./imgs/logo.svg" alt="Site Logo"/>
+            <img style="width: 20rem; margin-bottom: 0.5rem;" src='./imgs/NileMarketplaceHeader.svg' alt='Logo Header'/>
             <form action="login.php" method="POST">
                 <label for="username">Username</label><br>
                 <input type="text" name="username"><br><br>
-                <label for="password">Password</label><br>
+                <label for="password">Password</label><a href="#example" style="float:right" class="underlineLink">Forgot your Password?</a><br>
                 <input type="password" name="password"><br><br>
-                <input type="submit" name="submit" value="Submit">
+                <input class="submitButton" type="submit" name="submit" value="Login">
             </form>
-            <a href="./signup.php">Sign Up</a>
+            <a href="./signup.php" class="underlineLink">Sign Up</a>
         </div>
         <?php
             if (!empty($_POST['username']) && !empty($_POST['password'])) {

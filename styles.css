@@ -18,13 +18,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1%;
-  border: 1px solid black;
+  background: #1d1d1d;
   min-width: 15rem;
+  border-radius: 1rem;
+  color: #e6e6e6;
 }
 
 .accountFormContainer h3 {
   text-align: center;
   font-size: 1.5rem;
+  margin-bottom: 0px;
 }
 
 .accountFormContainer img {
@@ -35,15 +38,32 @@ body {
 }
 
 .accountFormContainer label {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+}
+
+.underlineLink {
+  color: #e6e6e6;
+}
+
+.underlineLink:hover {
+  color: #00aaff;
 }
 
 .accountFormContainer input {
   width: 100%;
-  font-size: 1.2rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
   border-radius: 0px;
-  border-width: 1px;
-  border-color: #e6e6e6;
+  border-width: 0px;
+  background-color: #121212;
+  border-radius: 0.4rem;
+  color: #e6e6e6;
+  padding: 0rem 0.5rem;
+}
+
+.submitButton:hover {
+  color: #00aaff;
+  cursor: pointer;
 }
 
 #topNav {
@@ -135,6 +155,7 @@ body {
 }
 
 #profileDropdown {
+  width: 13rem;
   display: none;
   background: #2e2e2e;
   position: fixed;
@@ -197,7 +218,6 @@ body {
 
 #sideNav a:hover {
   display: block;
-  text-decoration: none;
   color: #00aaff;
 }
 

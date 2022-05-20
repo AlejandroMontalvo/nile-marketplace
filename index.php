@@ -1,10 +1,6 @@
 <?php
 include "./database_interactions/account/security.php";
 include "./database_interactions/marketplace/listings.php";
-if (!security_loggedIn()) {
-    header("Location: login.php");
-    exit();
-}
 ?>
 <html>
     <head>
@@ -27,10 +23,16 @@ if (!security_loggedIn()) {
                     <div id="navTools">
                         <button id="navProfile"><img id="navIcon" src="./imgs/profile.svg" alt="Profile"/></button>
                         <div id="profileDropdown">
-                            <a href="#example" class="dropdownOption"><img class="dropdownIcon" src="./imgs/account-details.svg" alt="account-information"/>Account Information</a>
-                            <a href="#example" class="dropdownOption"><img class="dropdownIcon" src="./imgs/package.svg" alt="orders&returns"/>Orders & Returns</a>
-                            <a href="#example" class="dropdownOption"><img class="dropdownIcon" src="./imgs/package-plus.svg" alt="orders&returns"/>Create New Listing</a>
-                            <a href="./logout.php" class="dropdownOption"><img class="dropdownIcon" src="./imgs/logout.svg" alt="logout"/>Logout</a>
+                            <?php 
+                                if (!security_loggedIn()) {
+                                    echo ("<a href='login.php' class='dropdownOption'><img class='dropdownIcon' src='./imgs/Login.svg' alt='login'/>Login</a>");
+                                } else {
+                                    echo ("<a href='#example' class='dropdownOption'><img class='dropdownIcon' src='./imgs/account-details.svg' alt='account-information'/>Account Information</a>");
+                                    echo ("<a href='#example' class='dropdownOption'><img class='dropdownIcon' src='./imgs/package.svg' alt='orders&returns'/>Orders & Returns</a>");
+                                    echo ("<a href='#example' class='dropdownOption'><img class='dropdownIcon' src='./imgs/package-plus.svg' alt='create-listing'/>Create New Listing</a>");
+                                    echo ("<a href='logout.php' class='dropdownOption'><img class='dropdownIcon' src='./imgs/logout.svg' alt='logout'/>Logout</a>");
+                                }
+                            ?>
                         </div>
                         <button id="navCart" href="index.php"><img src="./imgs/cart.svg" alt="Cart"/></button>
                     </div>
