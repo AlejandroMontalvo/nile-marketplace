@@ -26,7 +26,7 @@ If you haven't already, open XAAMP and start the Apache and MySQL services. Clic
 
 Once implemented, you should be able to login to the marketplace using the username `Admin` and the password `3134`.
 
-# Accesing the Marketplace
+# Accessing the Marketplace
 
 With XAAMP already started, click the `Admin` action of the Apache service. Dependending on your file structure, you may need to click on the nile-marketplace file within the index view to actually access the marketplace.
 
