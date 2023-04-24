@@ -6,10 +6,13 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  Picker,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
+import { useNavigation } from "@react-navigation/native";
 
-const CreateNewListing = () => {
+const CreateNewListing = ({ addListing }) => {
+  const navigation = useNavigation();
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [condition, setCondition] = useState("");
@@ -29,8 +32,18 @@ const CreateNewListing = () => {
     }
   };
 
-  const handleAddItem = () => {
-    // handle adding the item to the database or storage
+  const addItem = () => {
+    if (title && price && condition && description && image) {
+      const newListing = {
+        title: title,
+        price: price,
+        condition: condition,
+        description: description,
+        item_image: image,
+      };
+      addListing(newListing);
+      navigation.navigate("Home");
+    }
   };
 
   return (
@@ -49,14 +62,20 @@ const CreateNewListing = () => {
         style={styles.input}
         placeholder="Price"
         value={price}
+        keyboardType="decimal-pad"
         onChangeText={setPrice}
       />
-      <TextInput
+      <Picker
         style={styles.input}
-        placeholder="Condition"
-        value={condition}
-        onChangeText={setCondition}
-      />
+        selectedValue={condition}
+        onValueChange={(value) => setCondition(value)}
+      >
+        <Picker.Item label="New" value="New" />
+        <Picker.Item label="Like New" value="Like New" />
+        <Picker.Item label="Good" value="Good" />
+        <Picker.Item label="Fair" value="Fair" />
+        <Picker.Item label="Poor" value="Poor" />
+      </Picker>
       <TextInput
         style={styles.input}
         placeholder="Description"
@@ -64,7 +83,7 @@ const CreateNewListing = () => {
         onChangeText={setDescription}
         multiline
       />
-      <TouchableOpacity style={styles.button} onPress={handleAddItem}>
+      <TouchableOpacity style={styles.button} onPress={addItem}>
         <Text style={styles.buttonText}>Create</Text>
       </TouchableOpacity>
     </View>
@@ -83,9 +102,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginVertical: 10,
     paddingHorizontal: 10,
+    backgroundColor: "white",
   },
   button: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#0e4da4",
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -95,7 +115,7 @@ const styles = StyleSheet.create({
   createButton: {
     position: "absolute",
     bottom: 20,
-    backgroundColor: "blue",
+    backgroundColor: "#0e4da4",
     borderRadius: 5,
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -109,6 +129,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     borderRadius: 5,
     marginVertical: 10,
+    resizeMode: "contain",
   },
 });
 

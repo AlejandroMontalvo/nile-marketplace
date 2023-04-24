@@ -1,34 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./components/Home";
-import ListingDetailsScreen from "./components/ListingDetails";
+import Home from "./components/Home";
+import ListingDetails from "./components/ListingDetails";
 import CreateNewListing from "./components/CreateNewListing";
 import * as Font from "expo-font";
-import listings from "./assets/listings.json";
-
-const fetchFonts = async () => {
-  await Font.loadAsync({
-    "inter-regular": require("./assets/fonts/Inter-Regular.ttf"),
-    "inter-medium": require("./assets/fonts/Inter-Medium.ttf"),
-    "inter-bold": require("./assets/fonts/Inter-Bold.ttf"),
-  });
-};
+import listingsData from "./assets/listings.json";
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  fetchFonts();
+  const [listings, setListings] = useState(listingsData);
+
+  useEffect(() => {
+    async function loadFonts() {
+      await Font.loadAsync({
+        "inter-regular": require("./assets/fonts/Inter-Regular.ttf"),
+        "inter-medium": require("./assets/fonts/Inter-Medium.ttf"),
+        "inter-bold": require("./assets/fonts/Inter-Bold.ttf"),
+      });
+    }
+
+    loadFonts();
+  }, []);
+
+  const addListing = (newListing) => {
+    setListings([...listings, newListing]);
+  };
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={() => <HomeScreen listings={listings} />}
-        />
-        <Stack.Screen name="Listing Details" component={ListingDetailsScreen} />
-        <Stack.Screen name="Create New Listing" component={CreateNewListing} />
+        <Stack.Screen name="Home">
+          {(props) => <Home {...props} listings={listings} />}
+        </Stack.Screen>
+        <Stack.Screen name="Listing Details" component={ListingDetails} />
+        <Stack.Screen name="Create New Listing">
+          {(props) => <CreateNewListing {...props} addListing={addListing} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -4,18 +4,20 @@ import { Card, Text } from "@rneui/themed";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-const HomeScreen = ({ listings }) => {
+const Home = ({ listings }) => {
   const navigation = useNavigation();
+  const renderItem = ({ item }) => {
+    let imageSource = item.item_image.startsWith("data")
+      ? item.item_image
+      : require(`../../${item.item_image}`);
 
-  const renderItem = ({ item }) => (
-    console.log(item.item_image),
-    (
+    return (
       <TouchableOpacity
         onPress={() => navigation.navigate("Listing Details", { item })}
         style={styles.cardContainer}
       >
         <Card containerStyle={styles.card}>
-          <Card.Image source={item.item_image} resizeMode="contain" />
+          <Card.Image source={imageSource} resizeMode="contain" />
           <Card.Title style={styles.title}>{item.title}</Card.Title>
           <Card.Divider />
           <View style={styles.row}>
@@ -24,11 +26,11 @@ const HomeScreen = ({ listings }) => {
           </View>
         </Card>
       </TouchableOpacity>
-    )
-  );
+    );
+  };
 
   return (
-    <View style={styles.container}>
+    <View>
       <FlatList
         data={listings}
         renderItem={renderItem}
@@ -47,13 +49,8 @@ const HomeScreen = ({ listings }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "flex-start",
-  },
   cardContainer: {
-    flex: 1,
-    margin: 5,
+    flexBasis: "50%",
   },
   card: {
     borderRadius: 5,
@@ -93,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default Home;

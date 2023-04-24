@@ -6,9 +6,12 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "deploy": "gh-pages -d web-build",
+    "predeploy": "expo export:web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^18.0.1",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
@@ -17,14 +20,14 @@
     "expo": "~48.0.10",
     "expo-font": "^11.1.1",
     "expo-image-picker": "^14.1.1",
-    "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.6",
     "react-native-web": "~0.18.10"
   },
+  "private": true,
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "gh-pages": "^5.0.0"
   },
-  "private": true
+  "homepage": "http://alejandromontalvo.github.io/nile-marketplace"
 }

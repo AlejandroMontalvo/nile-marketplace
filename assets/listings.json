@@ -1,16 +1,23 @@
 [
   {
-    "item_image": "C:/Users/Admin/Documents/GitHub/nile-marketplace/assets/item_images/item1.jpg",
+    "item_image": "assets/item_images/item1.jpg",
     "title": "Item #1",
     "price": "$100.00",
     "condition": "Like New",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
-    "item_image": "./assets/item_images/item2.jpg",
+    "item_image": "assets/item_images/item2.jpg",
     "title": "Item #2",
     "price": "$200.00",
     "condition": "Used",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "item_image": "assets/item_images/item3.jpg",
+    "title": "Item #3",
+    "price": "$450.00",
+    "condition": "New",
     "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   }
 ]

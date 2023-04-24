@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { Image, Text, Card } from "@rneui/themed";
 
-const ListingDetailsScreen = ({ route }) => {
+const ListingDetails = ({ route }) => {
   const { item } = route.params;
   const [isHovered, setIsHovered] = useState(false);
   const handleHover = () => {
@@ -19,14 +19,12 @@ const ListingDetailsScreen = ({ route }) => {
     ...styles.buttonText,
     color: isHovered ? "#fff" : "#0e4da4",
   };
-
+  let imageSource = item.item_image.startsWith("data")
+    ? item.item_image
+    : require(`../../${item.item_image}`);
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={item.item_image}
-        resizeMode="contain"
-      />
+      <Image style={styles.image} source={imageSource} resizeMode="contain" />
       <Card containerStyle={styles.detailsContainer}>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.price}>{item.price}</Text>
@@ -49,7 +47,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingHorizontal: 10,
+    padding: 10,
+    backgroundColor: "white",
   },
   image: {
     width: "100%",
@@ -60,6 +59,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 5,
     margin: 5,
+    backgroundColor: "white",
   },
   title: {
     fontSize: 24,
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListingDetailsScreen;
+export default ListingDetails;
