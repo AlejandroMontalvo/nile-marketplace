@@ -1,6 +1,6 @@
-# Nile Marketplace App
+# Nile Marketplace
 
-The Nile Marketplace App is a basic marketplace implementation built with React Native. The app allows users to browse and create listings.
+Nile Marketplace is a basic marketplace implementation built with React Native. The app allows users to browse and create listings.
 
 [Live Demo](https://alejandromontalvo.github.io/nile-marketplace/)
 
