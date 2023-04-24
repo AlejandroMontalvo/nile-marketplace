@@ -2,6 +2,8 @@
 
 The Nile Marketplace App is a basic marketplace implementation built with React Native. The app allows users to browse and create listings.
 
+[Live Demo](https://alejandromontalvo.github.io/nile-marketplace/)
+
 ## Components
 
 ### Home
@@ -19,7 +21,9 @@ The ListingDetails component displays the details of a single listing. It includ
 ## Inputs and States
 
 ### CreateNewListing
+
 Inputs:
+
 - Title input field.
 - Description input field.
 - Price input field.
@@ -27,6 +31,7 @@ Inputs:
 - Image picker for selecting an image to upload.
 
 States:
+
 - title: String representing the title of the listing.
 - description: String representing the description of the listing.
 - price: String representing the price of the listing.
@@ -34,15 +39,21 @@ States:
 - image: Object representing the image selected by the user.
 
 ### Home
+
 Inputs:
+
 - Listings array containing objects representing each listing to be displayed.
 
 States:
+
 - None.
 
 ### ListingDetails:
+
 Inputs:
+
 - Object representing the selected listing.
-  
+
 States:
+
 - None.
