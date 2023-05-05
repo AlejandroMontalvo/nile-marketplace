@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { Image, Text, Card } from "@rneui/themed";
+import BackButton from "../../components/BackButton";
 
 const ListingDetails = ({ route }) => {
   const { item } = route.params;
@@ -19,11 +20,13 @@ const ListingDetails = ({ route }) => {
     ...styles.buttonText,
     color: isHovered ? "#fff" : "#0e4da4",
   };
+
   let imageSource = item.item_image.startsWith("data")
     ? item.item_image
     : require(`../../${item.item_image}`);
   return (
     <View style={styles.container}>
+      <BackButton />
       <Image style={styles.image} source={imageSource} resizeMode="contain" />
       <Card containerStyle={styles.detailsContainer}>
         <Text style={styles.title}>{item.title}</Text>
@@ -58,30 +61,35 @@ const styles = StyleSheet.create({
   detailsContainer: {
     padding: 20,
     borderRadius: 5,
+    borderWidth: 0,
     margin: 5,
     backgroundColor: "white",
+    shadowColor: "#171717",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    fontFamily: "inter-bold",
+    fontFamily: "Manrope-Regular",
   },
   price: {
     fontSize: 20,
     fontWeight: "bold",
     marginTop: 10,
-    fontFamily: "inter-medium",
+    fontFamily: "Manrope-Regular",
   },
   condition: {
     fontSize: 16,
     color: "gray",
     marginTop: 10,
-    fontFamily: "inter-regular",
+    fontFamily: "Manrope-Regular",
   },
   description: {
     fontSize: 16,
     marginTop: 10,
-    fontFamily: "inter-regular",
+    fontFamily: "Manrope-Regular",
   },
   button: {
     marginTop: 20,
@@ -95,7 +103,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     fontWeight: "bold",
-    fontFamily: "inter-regular",
+    fontFamily: "Manrope-Regular",
   },
 });
 

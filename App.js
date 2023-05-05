@@ -1,36 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./components/Home";
-import ListingDetails from "./components/ListingDetails";
-import CreateNewListing from "./components/CreateNewListing";
-import * as Font from "expo-font";
+import Home from "./pages/Home";
+import ListingDetails from "./pages/ListingDetails";
+import CreateNewListing from "./pages/CreateNewListing";
 import listingsData from "./assets/listings.json";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
 const Stack = createStackNavigator();
 
 const App = () => {
   const [listings, setListings] = useState(listingsData);
 
-  useEffect(() => {
-    async function loadFonts() {
-      await Font.loadAsync({
-        "inter-regular": require("./assets/fonts/Inter-Regular.ttf"),
-        "inter-medium": require("./assets/fonts/Inter-Medium.ttf"),
-        "inter-bold": require("./assets/fonts/Inter-Bold.ttf"),
-      });
-    }
+  const [fontsLoaded] = useFonts({
+    "Manrope-Regular": require("./assets/fonts/Manrope-Regular.ttf"),
+    "Manrope-Bold": require("./assets/fonts/Manrope-Bold.ttf"),
+  });
 
-    loadFonts();
-  }, []);
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   const addListing = (newListing) => {
     setListings([...listings, newListing]);
   };
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
+    <NavigationContainer onLayout={onLayoutRootView}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         <Stack.Screen name="Home">
           {(props) => <Home {...props} listings={listings} />}
         </Stack.Screen>

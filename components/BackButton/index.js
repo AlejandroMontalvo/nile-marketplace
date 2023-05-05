@@ -1,0 +1,35 @@
+import React from "react";
+import { TouchableOpacity, StyleSheet } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+
+const BackButton = () => {
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.goBack();
+  };
+
+  return (
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
+      <MaterialIcons name="arrow-back" size={32} color="white" />
+    </TouchableOpacity>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    width: 42,
+    height: 42,
+    borderRadius: 32,
+    backgroundColor: "rgba(0,0,0,0.4)",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    top: 12,
+    left: 12,
+    zIndex: 1,
+  },
+});
+
+export default BackButton;
