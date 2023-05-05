@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/nile-marketplace/static/js/main.52d2a4d0.js",
-    "static/js/36.0c268a52.js": "/nile-marketplace/static/js/36.0c268a52.js",
+    "main.js": "/nile-marketplace/static/js/main.6a6eab53.js",
+    "static/js/134.dababbe1.js": "/nile-marketplace/static/js/134.dababbe1.js",
     "static/media/item1.jpg": "/nile-marketplace/static/media/item1.3ec4dc789b75e816c201.jpg",
     "static/media/Inter-Bold.ttf": "/nile-marketplace/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
     "static/media/Inter-Medium.ttf": "/nile-marketplace/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
@@ -9,6 +9,10 @@
     "static/media/MaterialIcons.ttf": "/nile-marketplace/static/media/MaterialIcons.120b4c7bbd155bd0a04d.ttf",
     "static/media/item2.jpg": "/nile-marketplace/static/media/item2.f11aa28c98ad6bffdf0d.jpg",
     "static/media/item3.jpg": "/nile-marketplace/static/media/item3.a82468c95b10fadd2644.jpg",
+    "static/media/Manrope-Medium.ttf": "/nile-marketplace/static/media/Manrope-Medium.4168694247a79cad145f.ttf",
+    "static/media/Manrope-Regular.ttf": "/nile-marketplace/static/media/Manrope-Regular.cff318e1af08cf483836.ttf",
+    "static/media/Manrope-Bold.ttf": "/nile-marketplace/static/media/Manrope-Bold.8847f48b30e6d876c969.ttf",
+    "static/media/Manrope-Light.ttf": "/nile-marketplace/static/media/Manrope-Light.30cd988125e4936ea227.ttf",
     "static/media/splash.png": "/nile-marketplace/static/media/splash.59202d4616ada0a93f98.png",
     "static/media/icon.png": "/nile-marketplace/static/media/icon.608e4d9dafd9fd3d79c3.png",
     "static/media/adaptive-icon.png": "/nile-marketplace/static/media/adaptive-icon.e4e802086f8059b5b5ba.png",
@@ -19,16 +23,16 @@
     "favicon-32.png": "/nile-marketplace/favicon-32.png",
     "static/media/star.png": "/nile-marketplace/static/media/star.69c7138684828d68fe5a.png",
     "static/media/heart.png": "/nile-marketplace/static/media/heart.23b5c2c0eb77d50ff1b4.png",
+    "static/media/README.md": "/nile-marketplace/static/media/README.61e87f3258c7ae4575c2.md",
     "static/media/favicon.png": "/nile-marketplace/static/media/favicon.fa4783d1ba9f4f78d8f8.png",
     "favicon-16.png": "/nile-marketplace/favicon-16.png",
     "manifest.json": "/nile-marketplace/manifest.json",
     "serve.json": "/nile-marketplace/serve.json",
-    "static/media/README.md": "/nile-marketplace/static/media/README.9e1f6f5090c5d685a707.md",
-    "main.52d2a4d0.js.map": "/nile-marketplace/static/js/main.52d2a4d0.js.map",
-    "36.0c268a52.js.map": "/nile-marketplace/static/js/36.0c268a52.js.map"
+    "main.6a6eab53.js.map": "/nile-marketplace/static/js/main.6a6eab53.js.map",
+    "134.dababbe1.js.map": "/nile-marketplace/static/js/134.dababbe1.js.map"
   },
   "entrypoints": [
-    "static/js/36.0c268a52.js",
-    "static/js/main.52d2a4d0.js"
+    "static/js/134.dababbe1.js",
+    "static/js/main.6a6eab53.js"
   ]
 }
