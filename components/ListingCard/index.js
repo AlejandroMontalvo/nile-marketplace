@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   cardContainer: {
     flexBasis: "50%",
   },
+
   card: {
     borderRadius: 8,
     borderWidth: 0,

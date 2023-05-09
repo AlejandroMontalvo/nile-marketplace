@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import ListingCard from "../../components/ListingCard";
 import NavigationBar from "../../components/NavigationBar";
 
-const Home = ({ listings }) => {
+const Favorites = ({ listings }) => {
   const navigation = useNavigation();
   const renderItem = ({ item }) => (
     <ListingCard item={item} navigation={navigation} />
@@ -19,7 +19,7 @@ const Home = ({ listings }) => {
         numColumns={2}
         contentContainerStyle={styles.flatListContainer}
       />
-      <NavigationBar activeItem={"Home"} />
+      <NavigationBar />
     </View>
   );
 };
@@ -27,10 +27,11 @@ const Home = ({ listings }) => {
 const styles = StyleSheet.create({
   flatListContainer: {
     padding: 12,
+    paddingBottom: 70,
   },
   test: {
     height: "100%",
   },
 });
 
-export default Home;
+export default Favorites;

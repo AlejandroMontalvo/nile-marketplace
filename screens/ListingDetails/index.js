@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { Image, Text, Card } from "@rneui/themed";
+import FavoriteButton from "../../components/FavoriteButton";
 import BackButton from "../../components/BackButton";
 
 const ListingDetails = ({ route }) => {
@@ -29,6 +30,7 @@ const ListingDetails = ({ route }) => {
       <BackButton />
       <Image style={styles.image} source={imageSource} resizeMode="contain" />
       <Card containerStyle={styles.detailsContainer}>
+        <FavoriteButton />
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.price}>{item.price}</Text>
         <Text style={styles.condition}>{item.condition}</Text>

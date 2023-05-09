@@ -1,10 +1,12 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-const NavigationBar = ({ activeItem, onSelect }) => {
+const NavigationBar = ({ onSelect }) => {
   const navigation = useNavigation();
+  const route = useRoute();
+
   return (
     <View style={styles.navigation}>
       <TouchableOpacity
@@ -14,31 +16,31 @@ const NavigationBar = ({ activeItem, onSelect }) => {
         <MaterialIcons
           name="home"
           size={30}
-          color={activeItem === "Home" ? "#236dd5" : "#aaa"}
+          color={route.name === "Home" ? "#236dd5" : "#aaa"}
         />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => onSelect("favorites")}
+        onPress={() => navigation.navigate("Favorites")}
         style={styles.button}
       >
         <MaterialIcons
           name="favorite"
           size={30}
-          color={activeItem === "favorites" ? "#236dd5" : "#aaa"}
+          color={route.name === "Favorites" ? "#236dd5" : "#aaa"}
         />
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigation.navigate("Create New Listing")}
         style={styles.addButtonWrapper}
       >
-        <MaterialIcons name="add" size={30} color="white" />
+        <MaterialIcons name="add" size={40} color="white" />
       </TouchableOpacity>
-      <View style={styles.button}></View>
+      <View style={styles.navigationSpacer}></View>
       <TouchableOpacity onPress={() => onSelect("inbox")} style={styles.button}>
         <MaterialIcons
           name="inbox"
           size={30}
-          color={activeItem === "inbox" ? "#236dd5" : "#aaa"}
+          color={route.name === "Inbox" ? "#236dd5" : "#aaa"}
         />
       </TouchableOpacity>
       <TouchableOpacity
@@ -48,7 +50,7 @@ const NavigationBar = ({ activeItem, onSelect }) => {
         <MaterialIcons
           name="account-circle"
           size={30}
-          color={activeItem === "profile" ? "#236dd5" : "#aaa"}
+          color={route.name === "Profile" ? "#236dd5" : "#aaa"}
         />
       </TouchableOpacity>
     </View>
@@ -57,7 +59,7 @@ const NavigationBar = ({ activeItem, onSelect }) => {
 
 const styles = StyleSheet.create({
   navigation: {
-    position: "absolute",
+    position: "fixed",
     bottom: 0,
     left: 0,
     right: 0,
@@ -77,6 +79,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
+  },
+  navigationSpacer: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    width: 60,
   },
   addButtonWrapper: {
     width: 60,
