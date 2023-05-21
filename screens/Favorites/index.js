@@ -29,8 +29,6 @@ const Favorites = ({ listings }) => {
       console.log("Error retrieving favorites from AsyncStorage:", error);
     }
   };
-  console.log(favoriteListings);
-  console.log("poop");
 
   const renderItem = ({ item }) => (
     <ListingCard item={item} navigation={navigation} />
