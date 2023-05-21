@@ -22,15 +22,15 @@ const ListingDetails = ({ route }) => {
     color: isHovered ? "#fff" : "#0e4da4",
   };
 
-  let imageSource = item.item_image.startsWith("data")
-    ? item.item_image
-    : require(`../../${item.item_image}`);
+  let imageSource = item.image.startsWith("data")
+    ? item.image
+    : require(`../../${item.image}`);
   return (
     <View style={styles.container}>
       <BackButton />
       <Image style={styles.image} source={imageSource} resizeMode="contain" />
       <Card containerStyle={styles.detailsContainer}>
-        <FavoriteButton />
+        <FavoriteButton itemId={item.id} />
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.price}>{item.price}</Text>
         <Text style={styles.condition}>{item.condition}</Text>

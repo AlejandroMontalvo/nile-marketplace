@@ -1,17 +1,18 @@
 import React, { useCallback, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./screens/Home";
-import ListingDetails from "./screens/ListingDetails";
-import CreateNewListing from "./screens/CreateNewListing";
-import listingsData from "./assets/listings/listingsData.json";
+import Home from "./screens/Home/index.js";
+import ListingDetails from "./screens/ListingDetails/index.js";
+import CreateNewListing from "./screens/CreateNewListing/index.js";
+import listingData from "./assets/listings/listingData.json";
+import Favorites from "./screens/Favorites/index.js";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
 const Stack = createStackNavigator();
 
 const App = () => {
-  const [listings, setListings] = useState(listingsData);
+  const [listings, setListings] = useState(listingData);
 
   const [fontsLoaded] = useFonts({
     "Manrope-Regular": require("./assets/fonts/Manrope-Regular.ttf"),
@@ -47,7 +48,7 @@ const App = () => {
           {(props) => <CreateNewListing {...props} addListing={addListing} />}
         </Stack.Screen>
         <Stack.Screen name="Favorites">
-          {(props) => <Home {...props} listings={listings} />}
+          {(props) => <Favorites {...props} listings={listings} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

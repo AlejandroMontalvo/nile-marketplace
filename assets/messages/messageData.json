@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "image": "assets/listings/images/item1.jpg",
+    "title": "Item #1",
+    "price": "$100",
+    "condition": "Like New",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id": "2",
+    "image": "assets/listings/images/item2.jpg",
+    "title": "Item #2",
+    "price": "$200",
+    "condition": "Used",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "id": "3",
+    "image": "assets/listings/images/item3.jpg",
+    "title": "Item #3",
+    "price": "$450",
+    "condition": "New",
+    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }
+]

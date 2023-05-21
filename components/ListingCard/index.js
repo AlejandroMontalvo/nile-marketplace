@@ -3,9 +3,9 @@ import { TouchableOpacity, StyleSheet, View } from "react-native";
 import { Card, Text } from "@rneui/themed";
 
 const ListingCard = ({ item, navigation }) => {
-  let imageSource = item.item_image.startsWith("data")
-    ? item.item_image
-    : require(`../../${item.item_image}`);
+  let imageSource = item.image.startsWith("data")
+    ? item.image
+    : require(`../../${item.image}`);
 
   return (
     <TouchableOpacity

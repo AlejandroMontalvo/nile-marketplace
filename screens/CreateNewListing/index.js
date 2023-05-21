@@ -143,14 +143,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     borderRadius: 5,
+    placeholderTextColor: "grey",
   },
   priceSymbol: {
     fontSize: 20,
     fontWeight: "bold",
     margin: 8,
-    marginRight: 0,
+    marginRight: 2,
     fontFamily: "Manrope-Regular",
-    color: "grey",
   },
   priceInput: {
     borderWidth: 0,
