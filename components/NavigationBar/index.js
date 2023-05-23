@@ -6,29 +6,28 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 const NavigationBar = () => {
   const navigation = useNavigation();
   const route = useRoute();
+  const isRouteActive = (routeName) => route.name === routeName;
+
+  const renderIconColor = (routeName) =>
+    isRouteActive(routeName) ? "#236dd5" : "#aaa";
+
+  const renderButton = (routeName, iconName) => (
+    <TouchableOpacity
+      onPress={() => navigation.navigate(routeName)}
+      style={styles.button}
+    >
+      <MaterialIcons
+        name={iconName}
+        size={30}
+        color={renderIconColor(routeName)}
+      />
+    </TouchableOpacity>
+  );
 
   return (
     <View style={styles.navigation}>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Home")}
-        style={styles.button}
-      >
-        <MaterialIcons
-          name="home"
-          size={30}
-          color={route.name === "Home" ? "#236dd5" : "#aaa"}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Favorites")}
-        style={styles.button}
-      >
-        <MaterialIcons
-          name="favorite"
-          size={30}
-          color={route.name === "Favorites" ? "#236dd5" : "#aaa"}
-        />
-      </TouchableOpacity>
+      {renderButton("Home", "home")}
+      {renderButton("Favorites", "favorite")}
       <TouchableOpacity
         onPress={() => navigation.navigate("Create New Listing")}
         style={styles.addButtonWrapper}
@@ -36,23 +35,8 @@ const NavigationBar = () => {
         <MaterialIcons name="add" size={40} color="white" />
       </TouchableOpacity>
       <View style={styles.navigationSpacer}></View>
-      <TouchableOpacity onPress={() => onSelect("inbox")} style={styles.button}>
-        <MaterialIcons
-          name="inbox"
-          size={30}
-          color={route.name === "Inbox" ? "#236dd5" : "#aaa"}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => onSelect("profile")}
-        style={styles.button}
-      >
-        <MaterialIcons
-          name="account-circle"
-          size={30}
-          color={route.name === "Profile" ? "#236dd5" : "#aaa"}
-        />
-      </TouchableOpacity>
+      {renderButton("Inbox", "inbox")}
+      {renderButton("Profile", "account-circle")}
     </View>
   );
 };

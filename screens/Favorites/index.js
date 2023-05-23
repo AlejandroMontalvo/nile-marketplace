@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, View, FlatList, Text } from "react-native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import ListingCard from "../../components/ListingCard";
 import NavigationBar from "../../components/NavigationBar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -11,7 +11,14 @@ const Favorites = ({ listings }) => {
 
   useEffect(() => {
     fetchFavoriteListings();
-  }, []);
+  }, [listings]);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      // Re-run fetchFavoriteListings when the screen is focused
+      fetchFavoriteListings();
+    }, [])
+  );
 
   const fetchFavoriteListings = async () => {
     try {
@@ -36,13 +43,22 @@ const Favorites = ({ listings }) => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={favoriteListings}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        numColumns={2}
-        contentContainerStyle={styles.flatListContainer}
-      />
+      {favoriteListings.length === 0 ? (
+        <View style={styles.messageContainer}>
+          <Text style={styles.messageText}>
+            Nothing here yet! Hit the heart icon on an item to start your
+            collection.
+          </Text>
+        </View>
+      ) : (
+        <FlatList
+          data={favoriteListings}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          numColumns={2}
+          contentContainerStyle={styles.flatListContainer}
+        />
+      )}
       <NavigationBar />
     </View>
   );
@@ -55,6 +71,17 @@ const styles = StyleSheet.create({
   flatListContainer: {
     padding: 12,
     paddingBottom: 70,
+  },
+  messageContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  messageText: {
+    fontSize: 16,
+    color: "#888",
+    textAlign: "center",
+    margin: 30,
   },
 });
 
