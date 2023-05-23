@@ -25,6 +25,7 @@ const ListingDetails = ({ route }) => {
   let imageSource = item.image.startsWith("data")
     ? item.image
     : require(`../../${item.image}`);
+  
   return (
     <View style={styles.container}>
       <BackButton />
@@ -53,7 +54,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 10,
-    backgroundColor: "white",
   },
   image: {
     width: "100%",

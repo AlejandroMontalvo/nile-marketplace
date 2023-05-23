@@ -46,7 +46,7 @@ const Favorites = ({ listings }) => {
       {favoriteListings.length === 0 ? (
         <View style={styles.messageContainer}>
           <Text style={styles.messageText}>
-            Nothing here yet! Hit the heart icon on an item to start your
+            Nothing here yet! Press the ♡ icon on an item to start your
             collection.
           </Text>
         </View>

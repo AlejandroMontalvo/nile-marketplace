@@ -143,7 +143,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     borderRadius: 5,
-    placeholderTextColor: "grey",
   },
   priceSymbol: {
     fontSize: 20,
@@ -163,6 +162,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: "Manrope-Regular",
     fontSize: 16,
+    placeholderTextColor: "grey",
   },
   pickerInputUnselected: {
     color: "grey",

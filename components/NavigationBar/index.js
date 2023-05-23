@@ -18,7 +18,7 @@ const NavigationBar = () => {
     >
       <MaterialIcons
         name={iconName}
-        size={30}
+        size={32}
         color={renderIconColor(routeName)}
       />
     </TouchableOpacity>
