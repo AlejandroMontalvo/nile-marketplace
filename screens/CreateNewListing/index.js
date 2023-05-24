@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { StyleSheet, View, Text, TextInput, Image } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import * as ImagePicker from "expo-image-picker";
 import { useNavigation } from "@react-navigation/native";
 import BackButton from "../../components/BackButton";
+import CustomTextInput from "../../components/CustomTextInput";
+import CustomRichTextInput from "../../components/CustomRichTextInput";
+import CustomButton from "../../components/CustomButton";
 
 const CreateNewListing = ({ addListing }) => {
   const navigation = useNavigation();
@@ -59,14 +55,11 @@ const CreateNewListing = ({ addListing }) => {
     <View style={styles.container}>
       <BackButton />
       {image && <Image source={{ uri: image }} style={styles.image} />}
-      <TouchableOpacity style={styles.button} onPress={pickImage}>
-        <Text style={styles.buttonText}>Add Image</Text>
-      </TouchableOpacity>
-      <TextInput
-        style={styles.input}
-        placeholder="Title"
+      <CustomButton onPress={pickImage} title="Add Image" />
+      <CustomTextInput
         value={title}
         onChangeText={setTitle}
+        placeholder="Title"
       />
       <View style={styles.priceContainer}>
         <Text style={styles.priceSymbol}>$</Text>
@@ -102,17 +95,12 @@ const CreateNewListing = ({ addListing }) => {
         <Picker.Item label="Fair" value="Fair" color="black" />
         <Picker.Item label="Poor" value="Poor" color="black" />
       </Picker>
-      <TextInput
-        style={[styles.input, styles.richInput]}
-        placeholder="Description"
+      <CustomRichTextInput
         value={description}
-        onChangeText={setDescription}
-        multiline
-        numberOfLines={5}
+        onChange={setDescription}
+        placeholderValue={"Description"}
       />
-      <TouchableOpacity style={styles.button} onPress={addItem}>
-        <Text style={styles.buttonText}>Create New Listing</Text>
-      </TouchableOpacity>
+      <CustomButton onPress={addItem} title="Create New Listing" />
     </View>
   );
 };

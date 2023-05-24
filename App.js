@@ -1,11 +1,14 @@
 import React, { useCallback, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./screens/Home/index.js";
-import ListingDetails from "./screens/ListingDetails/index.js";
-import CreateNewListing from "./screens/CreateNewListing/index.js";
+import Home from "./screens/Home/";
+import ListingDetails from "./screens/ListingDetails/";
+import CreateNewListing from "./screens/CreateNewListing/";
+import Favorites from "./screens/Favorites/";
+import Profile from "./screens/Profile/";
 import listingData from "./assets/listings/listingData.json";
-import Favorites from "./screens/Favorites/index.js";
+import messageData from "./assets/messages/messageData.json"
+import userData from "./assets/users/userData.json";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
@@ -49,6 +52,12 @@ const App = () => {
         </Stack.Screen>
         <Stack.Screen name="Favorites">
           {(props) => <Favorites {...props} listings={listings} />}
+        </Stack.Screen>
+        <Stack.Screen name="Inbox">
+          {(props) => <Inbox {...props} messageData={messageData} />}
+        </Stack.Screen>
+        <Stack.Screen name="Profile">
+          {(props) => <Profile {...props} userData={userData} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
