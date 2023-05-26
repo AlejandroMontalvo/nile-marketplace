@@ -7,7 +7,7 @@ const BackButton = () => {
   const navigation = useNavigation();
 
   const handlePress = () => {
-    navigation.goBack();
+    navigation.goBack(); // Go back to the previous screen
   };
 
   return (
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
   container: {
     width: 42,
     height: 42,
-    borderRadius: 32,
-    backgroundColor: "rgba(0,0,0,0.4)",
+    borderRadius: 21, // Use half of the width and height for circular shape
+    backgroundColor: "rgba(0, 0, 0, 0.4)", // Use rgba for transparent background
     justifyContent: "center",
     alignItems: "center",
     position: "fixed",

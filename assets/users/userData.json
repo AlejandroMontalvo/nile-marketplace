@@ -5,6 +5,8 @@
     "name": "john_doe",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "email": "alejandrormont@gmail.com",
+    "followers": "8",
+    "following": "",
     "listings": "4",
     "sales": "2"
   }

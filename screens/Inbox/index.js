@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import ListingCard from "../../components/ListingCard";
 import NavigationBar from "../../components/NavigationBar";
 
-const Home = ({ listings }) => {
+const Inbox = ({ listings }) => {
   const navigation = useNavigation();
 
   const renderItem = useCallback(
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Inbox;
